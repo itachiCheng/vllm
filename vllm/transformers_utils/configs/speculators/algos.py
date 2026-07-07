@@ -71,4 +71,7 @@ def update_dflash(config_dict: dict, pre_trained_config: dict) -> None:
     pre_trained_config["dflash_config"] = {
         "mask_token_id": config_dict["mask_token_id"],
         "target_layer_ids": aux_layer_ids,
+        "block_size": config_dict.get("block_size"),
+        "micro_block_size": config_dict.get("micro_block_size"),
+        "anchor_len": config_dict.get("anchor_len", 1),
     }
